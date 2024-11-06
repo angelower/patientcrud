@@ -15,7 +15,7 @@
         <router-link to="/Listar" class="nav-link" >Listar pacientes</router-link>
       </li>
       <li class="nav-item">
-        <router-link to="/Crear" class="nav-link" >Crear nuevo paciente</router-link>
+        <router-link to="/Crear" class="nav-link" >Crear nuevo activo</router-link>
       </li>
       <li class="nav-item">
         <router-link to="/consultar" class="nav-link" >Consultar Resultados</router-link>

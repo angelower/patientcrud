@@ -1,4 +1,3 @@
-/* eslint-disable */
 <template>
   <div class="container mt-5">
     <div class="text-end mb-3">
@@ -6,90 +5,75 @@
     </div>
     <div class="card">
       <div class="card-header text-center text-white">
-        <h4 class="form-title">Formulario de Registro de Paciente</h4>
+        <h4 class="form-title">Formulario Registro de activos</h4>
       </div>
       <div class="card-body">
         <form @submit.prevent="agregarPaciente">
-          <!-- Documento de identidad -->
-          <div class="row mb-3 justify-content-center align-items-center">
-            <label for="documento" class="col-form-label">Documento de identidad:</label>
-            <div class="col-auto">
-              <input type="number" class="form-control text-center" id="documento" v-model="paciente.doc" placeholder="Ingrese el documento" style="width: 300px;">
-            </div>
-          </div>
           <!-- Nombre -->
           <div class="row mb-3 justify-content-center align-items-center">
-            <label for="nombre" class="col-form-label">Nombre:</label>
+            <label for="nombre" class="col-form-label">Nombre activo:</label>
             <div class="col-auto">
-              <input type="text" class="form-control text-center" id="nombre" v-model="paciente.name" placeholder="Ingrese el nombre" style="width: 300px;">
+              <input type="text" class="form-control text-center" id="nombre" v-model="paciente.doc" placeholder="Ingrese el nombre" style="width: 300px;">
             </div>
           </div>
-          <!-- Apellido -->
+          <!-- Marca -->
           <div class="row mb-3 justify-content-center align-items-center">
-            <label for="apellido" class="col-form-label">Apellido:</label>
+            <label for="marca" class="col-form-label">Marca:</label>
             <div class="col-auto">
-              <input type="text" class="form-control text-center" id="apellido" v-model="paciente.lastname" placeholder="Ingrese el apellido" style="width: 300px;">
+              <input type="text" class="form-control text-center" id="marca" v-model="paciente.name" placeholder="Ingrese la marca" style="width: 300px;">
             </div>
           </div>
-          <!-- Edad -->
+          <!-- Modelo -->
           <div class="row mb-3 justify-content-center align-items-center">
-            <label for="edad" class="col-form-label">Edad:</label>
+            <label for="modelo" class="col-form-label">Modelo:</label>
             <div class="col-auto">
-              <input type="number" class="form-control text-center" id="edad" v-model="paciente.edad" placeholder="Ingrese la edad" style="width: 300px;">
+              <input type="text" class="form-control text-center" id="Modelo" v-model="paciente.lastname" placeholder="Ingrese el Modelo" style="width: 300px;">
             </div>
           </div>
-          <!-- Género -->
+          <!-- serial -->
           <div class="row mb-3 justify-content-center align-items-center">
-            <label for="genero" class="col-form-label">Seleccionar género:</label>
+            <label for="serial" class="col-form-label">Serial:</label>
             <div class="col-auto">
-              <select class="form-select" id="genero" v-model="paciente.genero" style="width: 300px;">
-                <option selected>Seleccionar género</option>
-                <option value="Masculino">Masculino</option>
-                <option value="Femenino">Femenino</option>
-                <option value="Otro">Otro</option>
+              <input type="text" class="form-control text-center" id="serial" v-model="paciente.edad" placeholder="Ingrese el serial" style="width: 300px;">
+            </div>
+          </div>
+          <!-- Area perteneciente -->
+          <div class="row mb-3 justify-content-center align-items-center">
+            <label for="area" class="col-form-label">Seleccionar área:</label>
+            <div class="col-auto">
+              <select class="form-select" id="area" v-model="paciente.genero" style="width: 300px;">
+                <option selected>Seleccionar área</option>
+                <option value="Masculino">área Biomédica</option>
+                <option value="Femenino">área de Infraestructura</option>
+                <option value="Otro">área de Sistemas</option>
               </select>
             </div>
           </div>
-          <!-- EPS -->
+          <!-- Responsable -->
           <div class="row mb-3 justify-content-center align-items-center">
-            <label for="eps" class="col-form-label">Seleccionar EPS:</label>
+            <label for="responsable" class="col-form-label">Responsable:</label>
             <div class="col-auto">
               <select class="form-select" id="eps" v-model="paciente.eps" style="width: 300px;">
-                <option selected>Seleccionar EPS</option>
-                <option value="Sanitas">Sanitas</option>
-                <option value="Nueva EPS">Nueva EPS</option>
-                <option value="Coosalud">Sura</option>
-                <option value="Comfama">SaludTotal</option>
-                <option value="SaludCoop">Compensar</option>
+                <option selected>Seleccionar responsable</option>
+                <option value="Sanitas">Juan Felipe Lopez</option>
+                <option value="Nueva EPS">Mateo Oyuela</option>
+                <option value="Coosalud">Juan Jose Alzate</option>
+                <option value="Comfama">Fabio velez</option>
+                <option value="SaludCoop">Angelower</option>
               </select>
             </div>
           </div>
-          <!-- Colesterol total -->
+          <!-- Foto equipo -->
           <div class="row mb-3 justify-content-center align-items-center">
-            <label for="cholesterol" class="col-form-label">Colesterol total - CHOLT (mg/dL)</label>
+            <label for="cholesterolImage" class="col-form-label">Foto del equipo</label>
             <div class="col-auto">
-              <input type="number" step="0.01" class="form-control text-center" id="cholesterol" v-model="paciente.cholt" placeholder="Ingrese el colesterol total" style="width: 300px;">
-            </div>
-          </div>
-          <!-- HDL -->
-          <div class="row mb-3 justify-content-center align-items-center">
-            <label for="hdl" class="col-form-label">Lipoproteínas de Alta Densidad – HDL (mg/dL)</label>
-            <div class="col-auto">
-              <input type="number" step="0.01" class="form-control text-center" id="hdl" v-model="paciente.hdl" placeholder="Ingrese HDL" style="width: 300px;">
-            </div>
-          </div>
-          <!-- LDL -->
-          <div class="row mb-3 justify-content-center align-items-center">
-            <label for="ldl" class="col-form-label">Lipoproteínas de Baja Densidad – LDL (mg/dL)</label>
-            <div class="col-auto">
-              <input type="number" step="0.01" class="form-control text-center" id="ldl" v-model="paciente.ldl" placeholder="Ingrese LDL" style="width: 300px;">
-            </div>
-          </div>
-          <!-- Triglicéridos -->
-          <div class="row mb-3 justify-content-center align-items-center">
-            <label for="trig" class="col-form-label">Triglicéridos - TRIG (mg/dL)</label>
-            <div class="col-auto">
-              <input type="number" step="0.01" class="form-control text-center" id="trig" v-model="paciente.trig" placeholder="Ingrese triglicéridos" style="width: 300px;">
+              <input 
+                type="file" 
+                class="form-control text-center" 
+                id="cholesterolImage" 
+                accept="image/*" 
+                @change="procesarImagen" 
+                style="width: 300px;">
             </div>
           </div>
           <!-- Botones -->
@@ -118,17 +102,14 @@ export default {
       console.log(this.paciente);
       let datosPaciente = {
         id: null,
-        doc: this.paciente.doc,
+        doc: this.paciente.doc  ,
         name: this.paciente.name,
         lastname: this.paciente.lastname,
         edad: this.paciente.edad,
         genero: this.paciente.genero,
         eps: this.paciente.eps,
-        cholt: this.paciente.cholt,
-        hdl: this.paciente.hdl,
-        ldl: this.paciente.ldl,
-        trig: this.paciente.trig
-      }
+        cholt: this.paciente.choltImagen
+      };
       fetch('http://localhost/api/?insertar=1', {
         method: 'POST',
         body: JSON.stringify(datosPaciente),
@@ -142,6 +123,16 @@ export default {
       .catch((error) => {
         console.error('Error:', error);
       });
+    },
+    procesarImagen(e) {
+      const file = e.target.files[0];
+      if (file){
+        const reader = new FileReader();
+        reader.onload = (e) =>{
+          this.paciente.choltImagen = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
     }
   }
 };
