@@ -3,6 +3,8 @@ import HomeView from '../views/HomeView.vue'
 import ListarView from '../views/ListarView.vue'
 import CrearView from '../views/CrearView.vue'
 import EditarView from '../views/EditarView.vue'
+import ResultadoView from '../views/ResultadoView.vue'
+import ConsultarView from '../views/ConsultarView.vue'
 
 const routes = [
   {
@@ -25,13 +27,15 @@ const routes = [
     component: EditarView
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+    path: '/resultado/:id',
+    name: 'resultado',
+    component: ResultadoView
+  },
+  {
+    path: '/consultar',
+    name: 'consultar',
+    component: ConsultarView
+  },
 ]
 
 const router = createRouter({

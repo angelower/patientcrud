@@ -1,24 +1,30 @@
-# crudpacientes
+# Grupo SPAM
 
-## Project setup
-```
-npm install
-```
+## Integrantes:
 
-### Compiles and hot-reloads for development
 ```
-npm run serve
+Juan Jose Alzate
+Mateo Oyuela Rivero
+Fabio Velez
 ```
 
-### Compiles and minifies for production
+### Archivo API:
 ```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
+Guardar el archivo index.php que contiene la API de la siguiente manera:
+Carpeta de XAMPP:
+XAMPP/htdocs/api/index.php
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Archivo Base de datos:
+```
+Importar Practica1  (1).sql desde el phpmyadmin
+servidor - localhost
+usuario - root
+NO PASSWORD
+```
+
+### Rama develop:
+```
+Descargar la rama develop para que la aplicacion funcione completamente
+
+```
